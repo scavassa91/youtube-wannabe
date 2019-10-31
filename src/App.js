@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Home from '../containers/Home';
-import Video from '../containers/Video';
-import SearchBar from '../components/SearchBar';
+import Home from './containers/Home/Home';
+import Video from './containers/Video/Video';
+import SearchBar from './components/SearchBar/SearchBar';
 
 import {
     BrowserRouter as Router,

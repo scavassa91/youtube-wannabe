@@ -3,11 +3,11 @@ import { useLocation } from 'react-router-dom';
 
 import { CancelToken } from 'axios';
 
-import youtube from '../apis/youtube';
-import VideoList from '../components/VideoList';
-import VideoDetail from '../components/VideoDetail';
+import youtube from '../../apis/youtube';
+import VideoList from '../../components/VideoList/VideoList';
+import VideoDetail from '../../components/VideoDetail/VideoDetail';
 
-const Video = (props) => {
+const Video = () => {
     const [videos, setVideos] = useState([]);
     const [selectedVideo, setSelectedVideo] = useState(null);
     const { id } = useLocation().state;
@@ -55,8 +55,12 @@ const Video = (props) => {
         <div className="ui container">
             <div className="ui grid">
                 <div className="ui row">
-                    <div className="eleven wide column"><VideoDetail video={selectedVideo} /></div>
-                    <div className="five wide column"><VideoList onVideoSelect={onVideoSelect} videos={videos}/></div>
+                    <div className="eleven wide column">
+                        <VideoDetail video={selectedVideo} />
+                    </div>
+                    <div className="five wide column">
+                        <VideoList onVideoSelect={onVideoSelect} videos={videos}/>
+                    </div>
                 </div>
             </div>
             

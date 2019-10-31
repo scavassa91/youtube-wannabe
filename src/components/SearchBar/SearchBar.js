@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import youtube from '../apis/youtube';
+import youtube from '../../apis/youtube';
+
+import './SearchBar.css';
 
 const  SearchBar = () => {
     const [term , setTerm] = useState('');
@@ -40,7 +42,7 @@ const  SearchBar = () => {
     }, [term]);
 
     return (
-        <div className="search-bar ui segment">
+        <div className="ui segment search-bar">
             <form onSubmit={onFormSubmit} className="ui form">
                 <div className="field">
                     <label>Video Search</label>
