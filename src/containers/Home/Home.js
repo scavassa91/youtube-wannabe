@@ -7,7 +7,7 @@ import './Home.css';
 
 const Home = () => {
     const history = useHistory();
-    const search = (useLocation().state || {}).search || [];
+    const search = useLocation().state ? useLocation().state.search : [];
 
     const onVideoSelect = (video) => {
         history.push({
